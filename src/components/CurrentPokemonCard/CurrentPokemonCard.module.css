@@ -1,0 +1,33 @@
+.card {
+    position: fixed;
+    height: 100vh;
+    width: 35%;
+    /* border: 1px solid red; */
+    right: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.card img {
+    width: 40%;
+    margin: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+td {
+    width: 50%;
+    border-bottom: 1px solid rgb(200, 200, 200);
+}
+
+@media screen and (max-width: 500px) {
+    .card {
+        justify-content: start;
+    }
+    .card h1 {
+        font-size: 15px;
+    }
+}

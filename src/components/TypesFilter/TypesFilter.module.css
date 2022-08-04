@@ -1,0 +1,23 @@
+.container {
+    max-width: 50%;
+}
+
+.typesList {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+}
+
+.typesList li {
+    margin: 10px;
+    list-style-type: none;
+    padding: 10px;
+    border-radius: 15px;
+    background: #ececec;
+    cursor: pointer;
+}
+
+.activeFilter {
+    background: #000 !important;
+    color: #fff;
+}

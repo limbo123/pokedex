@@ -1,0 +1,39 @@
+.container {
+  width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.loadMoreBtn {
+  margin: 60px 0 30px 30px;
+  width: 200px;
+  color: #fff;
+  background-color: #000000;
+  border: none;
+  height: 50px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.scrollToTopBtn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background: #7474746a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 10px;
+    font-size: 30px;
+}
+
+.scrollToTopBtn:hover {
+    background: rgb(216, 216, 216);
+}

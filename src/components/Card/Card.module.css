@@ -1,0 +1,31 @@
+.card {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 5px;
+    user-select: none;
+    cursor: pointer;
+}
+
+.card:hover {
+    background: rgb(243, 243, 243);
+}
+
+.card h1 {
+    text-align: center;
+}
+
+.card img {
+    margin: auto;
+    width: 200px;
+}
+
+.typesList {
+    display: flex;
+}
+
+.typesList li {
+    list-style-type: none;
+    /* background: rgb(208, 208, 208); */
+    margin-right: 10px;
+}
