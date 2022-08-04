@@ -27,7 +27,6 @@ function App() {
     const res = await PokemonService.getAllPokemons(nextRequestUrl as string);
     console.log(res);
     setPokemons((prev) => [...prev, ...res.results]);
-    // setDisplayedPokemons();
     setNextRequestUrl(res.next);
     setIsLoading(false);
   };
