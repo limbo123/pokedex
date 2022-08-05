@@ -4,7 +4,6 @@ import Card from "./components/Card/Card";
 import CurrentPokemonCard from "./components/CurrentPokemonCard/CurrentPokemonCard";
 import styles from "./styles/App.module.css";
 import { Oval } from "react-loader-spinner";
-import { FiChevronUp } from "@react-icons/all-files/fi/FiChevronUp";
 import TypesFilter from "./components/TypesFilter/TypesFilter";
 import { IPokemon } from "./models/PokemonModel";
 import { IPokemonInfo } from "./models/CurrentPokemonInfoModel";
