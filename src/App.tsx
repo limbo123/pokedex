@@ -97,7 +97,7 @@ function App() {
       <CurrentPokemonCard pokemonInfo={currentPokemon} />
 
       <button className={styles.scrollToTopBtn} onClick={scrollToTop}>
-        On top
+        To top
       </button>
     </>
   );
