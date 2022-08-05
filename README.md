@@ -1,4 +1,4 @@
-# pokedex
+# Pokedex
 
 To launch app you can follow the link https://limbo123.github.io/pokedex/
 
