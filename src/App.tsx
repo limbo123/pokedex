@@ -88,6 +88,8 @@ function App() {
       <p className={styles.loadingStats}>
         Loaded: {pokemons.length}/{allPokemonsCount}
       </p>
+      {/* <div className={styles.loadMoreButtonWrapper}> */}
+
       <button
         type="button"
         className={styles.loadMoreBtn}
@@ -95,6 +97,7 @@ function App() {
       >
         {isLoading ? <Oval color="#fff" height={30} width={30} /> : "Load More"}
       </button>
+      {/* </div> */}
       <CurrentPokemonCard pokemonInfo={currentPokemon} />
 
       <button className={styles.scrollToTopBtn} onClick={scrollToTop}>

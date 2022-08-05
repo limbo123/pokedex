@@ -3,6 +3,7 @@ import { TypesService } from "../../api/typesService";
 import { IResultsData } from "../../models/response/ResponseData";
 import styles from "./TypesFilter.module.css";
 import typesColors from "../../сolorsOfTypes.json";
+import { BsFilterLeft } from "@react-icons/all-files/bs/BsFilterLeft";
 
 interface TypesFilterProps {
   setTypeFilters: (newFilters: string[]) => void;
@@ -11,6 +12,7 @@ interface TypesFilterProps {
 
 const TypesFilter: FC<TypesFilterProps> = ({ typesFilter, setTypeFilters }) => {
   const [allTypes, setAlltypes] = useState<IResultsData[]>([]);
+  const [isFiltersShowing, setIsFiltersShowing] = useState(false);
 
   useEffect(() => {
     fetchTypes();
@@ -34,31 +36,41 @@ const TypesFilter: FC<TypesFilterProps> = ({ typesFilter, setTypeFilters }) => {
   };
   return (
     <>
-      <div className={styles.container}>
-        <h1>Filter by type</h1>
-        <ul className={styles.typesList}>
-          {allTypes.map((type) => {
-            return (
-              <li
-                onClick={toggleFilter}
-                //setting background color of corresponding type if this type exists in filters
-                style={
-                  typesFilter.includes(type.name)
-                    ? {
-                        background:
-                          typesColors[type.name as keyof typeof typesColors],
-                        color: "#fff",
-                      }
-                    : {}
-                }
-                key={type.name}
-              >
-                {type.name}
-              </li>
-            );
-          })}
-        </ul>
-      </div>
+      <button
+        className={styles.handleFiltersBtn}
+        onClick={() => setIsFiltersShowing((prev) => !prev)}
+      >
+        {isFiltersShowing ? "Hide filters" : "Show filters"}
+        <BsFilterLeft />
+      </button>
+
+      {isFiltersShowing && (
+        <div className={styles.container}>
+          <h1>Filter by type</h1>
+          <ul className={styles.typesList}>
+            {allTypes.map((type) => {
+              return (
+                <li
+                  onClick={toggleFilter}
+                  //setting background color of corresponding type if this type exists in filters
+                  style={
+                    typesFilter.includes(type.name)
+                      ? {
+                          background:
+                            typesColors[type.name as keyof typeof typesColors],
+                          color: "#fff",
+                        }
+                      : {}
+                  }
+                  key={type.name}
+                >
+                  {type.name}
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      )}
     </>
   );
 };
