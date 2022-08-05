@@ -5,7 +5,7 @@ import { IResponseData, IResultsData } from "../models/response/ResponseData";
 export class PokemonService {
   static async getAllPokemons(
     url: string
-  ): Promise<{ results: IPokemon[]; next: string, allCount: number }> {
+  ): Promise<{ results: IPokemon[]; next: string; allCount: number }> {
     // fetch all pokemons "mini" objects
     const response = await $api.get<IResponseData>(url);
     console.log(response);
@@ -30,6 +30,10 @@ export class PokemonService {
       return data.data;
     });
 
-    return { results, next: String(response.data.next), allCount: response.data.count };
+    return {
+      results,
+      next: String(response.data.next),
+      allCount: response.data.count,
+    };
   }
 }

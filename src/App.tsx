@@ -4,6 +4,7 @@ import Card from "./components/Card/Card";
 import CurrentPokemonCard from "./components/CurrentPokemonCard/CurrentPokemonCard";
 import styles from "./styles/App.module.css";
 import { Oval } from "react-loader-spinner";
+import { BiChevronUp } from "@react-icons/all-files/bi/BiChevronUp";
 import TypesFilter from "./components/TypesFilter/TypesFilter";
 import { IPokemon } from "./models/PokemonModel";
 import { IPokemonInfo } from "./models/CurrentPokemonInfoModel";
@@ -97,7 +98,7 @@ function App() {
       <CurrentPokemonCard pokemonInfo={currentPokemon} />
 
       <button className={styles.scrollToTopBtn} onClick={scrollToTop}>
-        To top
+        <BiChevronUp size={"2rem"} />
       </button>
     </>
   );

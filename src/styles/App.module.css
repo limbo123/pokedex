@@ -40,29 +40,29 @@
 }
 
 .scrollToTopBtn {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    width: 60px;
-    height: 60px;
-    background: #7474746a;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: none;
-    border-radius: 10px;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  background: #7474746a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 10px;
 }
 
 .scrollToTopBtn:hover {
-    background: rgb(216, 216, 216);
+  background: rgb(216, 216, 216);
 }
 
 @media screen and (max-width: 500px) {
-    .logo {
-      padding: 5px;
-      width: fit-content;
-    }
-    .container {
-      justify-content: start;
-    }
+  .logo {
+    padding: 5px;
+    width: fit-content;
+  }
+  .container {
+    justify-content: start;
+  }
 }

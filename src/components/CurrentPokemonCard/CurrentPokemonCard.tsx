@@ -7,28 +7,29 @@ interface CurrentPokemonCardProps {
 }
 
 const CurrentPokemonCard: FC<CurrentPokemonCardProps> = ({ pokemonInfo }) => {
-
   if (Object.keys(pokemonInfo).length > 0) {
     return (
-        <div className={styles.card}>
-          <img src={pokemonInfo.image} alt="" />
+      <div className={styles.card}>
+        <img src={pokemonInfo.image} alt="" />
 
-          <h1>{pokemonInfo.name}</h1>
-          <table>
-            <tbody>
+        <h1>{pokemonInfo.name}</h1>
+        <table>
+          <tbody>
             <>
               {Object.entries(pokemonInfo).map(([key, value]: any) => {
-                if(key === "name" || key === "image") return null;
+                if (key === "name" || key === "image") return null;
                 //rendering table row for each pokemonInfo entry
-                return <tr key={key}>
+                return (
+                  <tr key={key}>
                     <td>{key}</td>
                     <td>{value}</td>
-                </tr>
+                  </tr>
+                );
               })}
             </>
-            </tbody>
-          </table>
-        </div>
+          </tbody>
+        </table>
+      </div>
     );
   }
   return null;
