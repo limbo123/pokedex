@@ -6,7 +6,6 @@
   padding: 20px;
   border: 1px solid #000;
   text-align: center;
-  /* position: relative; */
 }
 
 .container {
@@ -52,7 +51,6 @@
     align-items: center;
     border: none;
     border-radius: 10px;
-    /* font-size: 30px; */
 }
 
 .scrollToTopBtn:hover {
