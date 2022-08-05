@@ -1,16 +1,29 @@
+.logo {
+  margin: auto;
+  margin-top: 20px;
+  width: 30%;
+  text-align: center;
+  padding: 20px;
+  border: 1px solid #000;
+  text-align: center;
+  /* position: relative; */
+}
+
 .container {
   width: 50%;
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
-.loadMoreHint {
-  margin-left: 30px;
+.loadingStats {
+  margin-left: 5px;
+  font-size: 20px;
 }
 
 .loadMoreBtn {
-  margin: 60px 0 30px 30px;
-  width: 200px;
+  margin: 0 0 30px 5px;
+  width: 50%;
   color: #fff;
   background-color: #000000;
   border: none;
@@ -39,9 +52,19 @@
     align-items: center;
     border: none;
     border-radius: 10px;
-    font-size: 30px;
+    /* font-size: 30px; */
 }
 
 .scrollToTopBtn:hover {
     background: rgb(216, 216, 216);
+}
+
+@media screen and (max-width: 500px) {
+    .logo {
+      padding: 5px;
+      width: fit-content;
+    }
+    .container {
+      justify-content: start;
+    }
 }

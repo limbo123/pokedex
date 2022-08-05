@@ -1,7 +1,7 @@
 export interface IPokemonInfo {
   name: string;
   image: string;
-  Types: string;
+  Type: string;
   Attack: number;
   Defence: number;
   HP: number;

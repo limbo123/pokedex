@@ -17,7 +17,7 @@ const Card: FC<CardProps> = ({ pokemonInfo, setCurrentPokemon }) => {
     const generalInfo: IPokemonInfo = {
       name,
       image: sprites.front_default,
-      "Types": types.map((type) => type.type.name).join(", "),
+      "Type": types.map((type) => type.type.name).join(", "),
       "Attack": stats[1].base_stat,
       "Defence": stats[2].base_stat,
       "HP": stats[0].base_stat,
