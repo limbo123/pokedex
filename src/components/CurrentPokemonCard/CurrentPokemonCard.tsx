@@ -1,8 +1,9 @@
-import React, { FC, useEffect } from "react";
+import { FC } from "react";
+import { IPokemonInfo } from "../../models/CurrentPokemonInfoModel";
 import styles from "./CurrentPokemonCard.module.css";
 
 interface CurrentPokemonCardProps {
-  pokemonInfo: any; //REMOVE ANY
+  pokemonInfo: IPokemonInfo;
 }
 
 const CurrentPokemonCard: FC<CurrentPokemonCardProps> = ({ pokemonInfo }) => {
@@ -14,15 +15,18 @@ const CurrentPokemonCard: FC<CurrentPokemonCardProps> = ({ pokemonInfo }) => {
 
           <h1>{pokemonInfo.name}</h1>
           <table>
+            <tbody>
             <>
               {Object.entries(pokemonInfo).map(([key, value]: any) => {
                 if(key === "name" || key === "image") return null;
+                //rendering table row for each pokemonInfo entry
                 return <tr key={key}>
                     <td>{key}</td>
                     <td>{value}</td>
                 </tr>
               })}
             </>
+            </tbody>
           </table>
         </div>
     );

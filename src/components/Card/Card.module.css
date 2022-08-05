@@ -5,6 +5,7 @@
     margin: 5px;
     user-select: none;
     cursor: pointer;
+    border: 1px solid rgb(238, 238, 238);
 }
 
 .card:hover {
@@ -22,10 +23,16 @@
 
 .typesList {
     display: flex;
+    padding: 0;
+    padding-left: 10px;
 }
 
 .typesList li {
     list-style-type: none;
-    /* background: rgb(208, 208, 208); */
+    padding: 3px 10px;
     margin-right: 10px;
+    color: #fff;
+    border-radius: 10px;
+    text-align: center;
+
 }

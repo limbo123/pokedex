@@ -1,30 +1,34 @@
-// import { AxiosResponse } from "axios";
+import { IPokemon } from "./../models/PokemonModel";
 import $api from ".";
-// import { IResponseData } from '../models/response/ResponseData';
-import { IResultsData } from "../models/ResultsData";
+import { IResponseData, IResultsData } from "../models/response/ResponseData";
 
 export class PokemonService {
-    static async getAllPokemons(url: string): Promise<any> {
-        const response = await $api.get(url);
+  static async getAllPokemons(
+    url: string
+  ): Promise<{ results: IPokemon[]; next: string }> {
+    // fetch all pokemons "mini" objects
+    const response = await $api.get<IResponseData>(url);
 
-        const fullObjectsPromises = await response.data.results.map(async(pokemon: IResultsData) => {
-            const fullObject = await $api.get(pokemon.url);
-            return fullObject;
-        });
+    //fetching a full objects for each "mini" pokemon object
+    const fullObjectsPromises = response.data.results.map(
+      async (pokemon: IResultsData) => {
+        const fullObject = await $api.get(pokemon.url);
+        return fullObject;
+      }
+    );
 
-        const promisesData = await Promise.all(fullObjectsPromises).then(value => {
-            return value;
+    //resolving each promise
+    const promisesData = await Promise.all(fullObjectsPromises).then(
+      (value) => {
+        return value;
+      }
+    );
 
-        })
+    //getting data from each promise
+    const results = promisesData.map((data) => {
+      return data.data;
+    });
 
-        const results = promisesData.map(data => {
-            return data.data;
-        })
-        return {results, next: response.data.next};
-    }
-
-    // static async getPokemon(url: string): Promise<AxiosResponse<any>> {
-    //     const response = await $api.get(url);
-    //     return response;
-    // }
+    return { results, next: String(response.data.next) };
+  }
 }

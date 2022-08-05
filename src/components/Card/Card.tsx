@@ -1,10 +1,12 @@
-import React, { FC, useEffect, useState } from "react";
-import { PokemonService } from "../../api/pokemonService";
+import { FC } from "react";
 import styles from "./Card.module.css";
+import typesColors from "../../сolorsOfTypes.json";
+import { IPokemon } from "../../models/PokemonModel";
+import { IPokemonInfo } from "../../models/CurrentPokemonInfoModel";
 
 interface CardProps {
-  pokemonInfo: any; // REMOVE ANY!!!
-  setCurrentPokemon: (pokemon: any) => void;  // REMOVE ANY!!!
+  pokemonInfo: IPokemon;
+  setCurrentPokemon: (pokemon: IPokemonInfo) => void;
 }
 
 const Card: FC<CardProps> = ({ pokemonInfo, setCurrentPokemon }) => {
@@ -12,10 +14,10 @@ const Card: FC<CardProps> = ({ pokemonInfo, setCurrentPokemon }) => {
   const setPokemon = () => {
     const { stats, types, weight, moves, name, sprites } = pokemonInfo;
 
-    const generalInfo = {
+    const generalInfo: IPokemonInfo = {
       name,
       image: sprites.front_default,
-      "Types": types.map((type: any) => type.type.name).join(", "),
+      "Types": types.map((type) => type.type.name).join(", "),
       "Attack": stats[1].base_stat,
       "Defence": stats[2].base_stat,
       "HP": stats[0].base_stat,
@@ -38,8 +40,8 @@ const Card: FC<CardProps> = ({ pokemonInfo, setCurrentPokemon }) => {
         <h1>{pokemonInfo.name}</h1>
           
           <ul className={styles.typesList}>
-            {pokemonInfo.types.map((type: any) => {
-              return <li key={type.slot}>{type?.type?.name}</li>
+            {pokemonInfo.types.map(({ type, slot }) => {
+              return <li key={slot} style={{background: typesColors[type.name as keyof typeof typesColors]}}>{type?.name}</li>
             })}
           </ul>
         </div>
